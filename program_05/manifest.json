@@ -1,0 +1,28 @@
+
+{
+  "name": "Program_3",
+
+  "short_name": "Program_3",
+
+  "start_url": "/index.html",
+
+  "display": "fullscreen",
+
+  "background_color": "#ffff00",
+
+  "description": "A simple applicationfor manifestation",
+
+  "orientation": "portrait-primary",
+
+  "theme_color": "#2196F3",
+
+  "icons": [
+    {
+      "src": "./images/android-launchericon-72-72.png",
+
+      "sizes": "72x72",
+
+      "type": "image/png"
+    }
+  ]
+}
