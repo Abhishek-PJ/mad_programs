@@ -1,0 +1,24 @@
+{
+  "name": "Stock Display",
+  "short_name": "Stock-Display",
+  "display": "standalone",
+  "start_url": "/stockdata_6thprogram/",
+  "id": "/stockdata_6thprogram/",
+  "description": "Display stock from JSON file",
+  "icons": [
+    {
+      "src": "./assets/android-launchericon-192-192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "maskable"
+    },
+    {
+      "src": "./assets/android-launchericon-512-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any"
+    }
+  ],
+  "background_color": "#00AA00",
+  "theme_color": "#00CC00"
+}
