@@ -1,0 +1,17 @@
+{
+  "name": "Simple PWA",
+  "short_name": "PWA",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4CAF50",
+  "icons": [
+    {
+      "src": "/serviceWorker2/android-launchericon-48-48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    }
+   
+
+  ]
+}
