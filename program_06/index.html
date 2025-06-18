@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stock Display</title>
+    <link rel="manifest" href="manifest.json" />
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 80%;
+      }
+      td, th {
+        padding: 1em;
+        border: 1px solid black;
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <h2>Stock Market Data Display</h2>
+      <div id="stock"></div>
+    </center>
+
+    <script>
+      // Register the Service Worker
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("sw.js")
+          .then((reg) => {
+            console.log("Service Worker registered", reg);
+          })
+          .catch((err) => {
+            console.log("Service Worker registration failed: ", err);
+          });
+      } else {
+        console.log("Service Worker not supported.");
+      }
+
+      // Fetch the JSON data and display it
+      fetch("data.json")
+        .then((res) => res.json())
+        .then((stock) => {
+          let table = "<table>";
+          table +=
+            "<tr><th>Company</th><th>Description</th><th>Initial Price</th><th>Price in 2007</th><th>Symbol</th></tr>";
+
+          for (let item of stock) {
+            table += `<tr>
+                        <td>${item.company}</td>
+                        <td>${item.description}</td>
+                        <td>${item.initial_price}</td>
+                        <td>${item.price_2007}</td>
+                        <td>${item.symbol}</td>
+                    </tr>`;
+          }
+
+          table += "</table>";
+          document.getElementById("stock").innerHTML = table;
+        })
+        .catch((err) => {
+          console.log("Error fetching stock data: ", err);
+        });
+    </script>
+  </body>
+</html>
