@@ -5,6 +5,8 @@ void main() {
 }
 
 class MyHome extends StatefulWidget {
+  const MyHome({super.key});
+
   @override
   State<MyHome> createState() => _MyHomeState();
 }
@@ -32,26 +34,23 @@ class _MyHomeState extends State<MyHome> {
           double dy = details.globalPosition.dy - start.dy;
 
           if (dx > 50) {
-            setState(() => text = "Swipe Right");
+            setState(() => text = "Swiped Right");
           } else if (dx < -50) {
-            setState(() => text = "Swipe Left");
+            setState(() => text = "Swiped Left");
           } else if (dy > 50) {
-            setState(() => text = "Swipe Down");
+            setState(() => text = "Swiped Down");
           } else if (dy < -50) {
-            setState(() => text = "Swipe Up");
+            setState(() => text = "Swiped Up");
           }
         },
         child: Center(
-          child: Container(
-            padding: EdgeInsets.all(20),
-            color: Colors.teal,
             child: Text(
               text,
               style: TextStyle(fontSize: 24, color: Colors.white),
             ),
           ),
         ),
-      ),
+      
     );
   }
 }
